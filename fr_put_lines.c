@@ -21,8 +21,8 @@ void	ft_draw1(t_map *map, t_cor *coord, int signx, int signy)
 {
 	int		d;
 
-	map->x = coord->x * map->mashtab;
-	map->y = coord->y * map->mashtab;
+	map->x = coord->x;
+	map->y = coord->y;
 	d = -map->dx;
 	map->len++;
 	while (map->len--)
@@ -43,8 +43,8 @@ void	ft_draw2(t_map *map, t_cor *coord, int signx, int signy)
 {
 	int		d;
 
-	map->x = coord->x * map->mashtab;
-	map->y = coord->y * map->mashtab;
+	map->x = coord->x;
+	map->y = coord->y;
 	d = -map->dy;
 	map->len++;
 	while (map->len--)
@@ -69,8 +69,8 @@ void	ft_lineh(t_cor *coord, t_map *map)
 	int		signy;
 
 	tmp = coord->next;
-	map->dx = ft_abs(coord->x * map->mashtab - tmp->x * map->mashtab);
-	map->dy = ft_abs(coord->y * map->mashtab - tmp->y * map->mashtab);
+	map->dx = ft_abs(coord->x - tmp->x);
+	map->dy = ft_abs(coord->y - tmp->y);
 	signx = coord->x < tmp->x ? 1 : -1;
 	signy = coord->y < tmp->y ? 1 : -1;
 	map->len = ft_maxint(map->dx, map->dy);
@@ -85,12 +85,9 @@ t_cor	*y_coord(t_cor *coord)
 	t_cor	*tmp;
 
 	tmp = coord;
-	while(tmp)
-	{
-		if (tmp->y > coord->y && tmp->x == coord->x)
-			return (tmp);
+	tmp = tmp->next;
+	while(tmp->x != coord->x)
 		tmp = tmp->next;
-	}
 	return(tmp);
 }
 
@@ -101,8 +98,8 @@ void	ft_verth(t_cor *coord, t_map *map)
 	int		signy;
 
 	tmp = y_coord(coord);
-	map->dx = ft_abs(coord->x * map->mashtab - tmp->x * map->mashtab);
-	map->dy = ft_abs(coord->y * map->mashtab - tmp->y * map->mashtab);
+	map->dx = ft_abs(coord->x - tmp->x);
+	map->dy = ft_abs(coord->y  - tmp->y);
 	signx = coord->x < tmp->x ? 1 : -1;
 	signy = coord->y < tmp->y ? 1 : -1;
 	map->len = ft_maxint(map->dx, map->dy);

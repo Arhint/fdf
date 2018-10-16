@@ -7,20 +7,6 @@ int		deal_key(int k)
 	return (0);
 }
 
-void	ft_putdots(t_map *map, t_cor *coord)
-{
-	int		color;
-	t_cor	*tmp;
-
-	tmp = coord;
-	color = 0xFFFFF;
-	while (tmp)
-	{
-		mlx_pixel_put(map->mlx, map->win, tmp->x * map->mashtab,
-						tmp->y * map->mashtab, color);
-		tmp = tmp->next;
-	}
-}
 
 void	ft_xy_max(t_map *map, t_cor *coord)
 {
@@ -29,7 +15,6 @@ void	ft_xy_max(t_map *map, t_cor *coord)
 	tmp = coord;
 	map->max_y = 0;
 	map->max_x = 0;
-	map->mashtab = 100;
 	while (tmp)
 	{
 		if (tmp->x > map->max_x)
@@ -53,5 +38,34 @@ void	ft_map(t_map *map, t_cor *coord)
 			ft_verth(tmp, map);
 		tmp = tmp->next;
 	}
-//	ft_putdots(map, coord);
 }
+
+
+void	ft_remake_coords(t_cor *cor, t_map *map)
+{
+	t_cor	*tmp;
+
+	tmp = cor;
+	while (tmp)
+	{
+		tmp->x *= map->mashtab;
+		tmp->y *= map->mashtab;
+		tmp->z *= map->mashtab;
+		tmp = tmp->next;
+	}
+	map->max_x *= map->mashtab;
+	map->max_y *= map->mashtab;
+}
+
+//void	ft_vertim_x(t_cor *cor, int a)
+//{
+//	t_cor	*tmp;
+//
+//	tmp = cor;
+//	while (tmp)
+//	{
+//		tmp->y = tmp->y * (cos(PI / 180 * a)) + tmp->z * (sin(PI / 180 * a));
+//		tmp->z = -tmp->y * (sin(PI / 180 * a)) + tmp->z * (cos(PI / 180 * a));
+//		tmp = tmp->next;
+//	}
+//}

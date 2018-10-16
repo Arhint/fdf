@@ -12,7 +12,7 @@ all: $(NAME)
 
 $(NAME):	$(OBJ)
 	make -C ./libft/
-	gcc $(FLG) $(OBJ) $(MLX) -L ./libft/ -lft -o $(NAME)
+	gcc $(FLG) $(OBJ) $(MLX) -L ./libft/ -lft -o $(NAME) -lm
 
 %.o: %.c
 	gcc -c $(FLG) -o $@ $<

@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/arh/study/new_fdf/fdf.c" "/home/arh/study/new_fdf/cmake-build-debug/CMakeFiles/new_fdf.dir/fdf.c.o"
-  "/home/arh/study/new_fdf/fr_put_lines.c" "/home/arh/study/new_fdf/cmake-build-debug/CMakeFiles/new_fdf.dir/fr_put_lines.c.o"
-  "/home/arh/study/new_fdf/ft_read.c" "/home/arh/study/new_fdf/cmake-build-debug/CMakeFiles/new_fdf.dir/ft_read.c.o"
-  "/home/arh/study/new_fdf/map.c" "/home/arh/study/new_fdf/cmake-build-debug/CMakeFiles/new_fdf.dir/map.c.o"
+  "/home/arh/study/fdf_go/fdf.c" "/home/arh/study/fdf_go/cmake-build-debug/CMakeFiles/new_fdf.dir/fdf.c.o"
+  "/home/arh/study/fdf_go/fr_put_lines.c" "/home/arh/study/fdf_go/cmake-build-debug/CMakeFiles/new_fdf.dir/fr_put_lines.c.o"
+  "/home/arh/study/fdf_go/ft_read.c" "/home/arh/study/fdf_go/cmake-build-debug/CMakeFiles/new_fdf.dir/ft_read.c.o"
+  "/home/arh/study/fdf_go/map.c" "/home/arh/study/fdf_go/cmake-build-debug/CMakeFiles/new_fdf.dir/map.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

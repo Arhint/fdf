@@ -18,6 +18,7 @@
 # include <math.h>
 
 # define ESC 113
+# define PI 3.14
 
 typedef struct		s_cor
 {
@@ -47,11 +48,12 @@ t_cor				*ft_read(int fd, int i, int j);
 void				ft_xy_max(t_map *map, t_cor *coord);
 int					deal_key(int k);
 void				ft_map(t_map *map, t_cor *coord);
-void				ft_putdots(t_map *map, t_cor *coord);
 
 void				ft_lineh(t_cor *coord, t_map *map);
 void				ft_verth(t_cor *coord, t_map *map);
+//void				ft_vertim_x(t_cor *cor, int a);
 
+void				ft_remake_coords(t_cor *cor, t_map *map);
 
 
 #endif
